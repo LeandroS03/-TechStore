@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario para configurar un equipo con mejoras de RAM y SSD.">
+    <title>Configurador a Medida | TechStore</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <header>
+        <h1>TechStore: Simulador de Hardware</h1>
+        <p>Cotiza tu equipo ideal y simula mejoras de componentes.</p>
+        <nav aria-label="Principal">
+            <ul>
+                <li><a href="index.html">Catálogo de Equipos</a></li>
+                <li><a href="configurador.html" aria-current="page">Configurador a Medida</a></li>
+                <li><a href="resumen.html">Resumen de Cotización</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="contenido">
+        <h2>Personaliza tu Equipo</h2>
+        <p class="intro">Todos los campos marcados con * son obligatorios.</p>
+        <form id="form-cotizacion" action="resumen.html" method="get" novalidate>
+            <div class="formulario-doble">
+                <fieldset>
+                    <legend>Datos del cliente</legend>
+                    <div class="campo">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" autocomplete="name" aria-describedby="error-nombre" aria-invalid="false" required>
+                        <p class="error" id="error-nombre"></p>
+                    </div>
+                    <div class="campo">
+                        <label for="correo">Correo electrónico *</label>
+                        <input type="email" id="correo" name="correo" autocomplete="email" aria-describedby="error-correo" aria-invalid="false" required>
+                        <p class="error" id="error-correo"></p>
+                    </div>
+                    <div class="campo">
+                        <label for="cantidad">Cantidad de equipos (1 a 10) *</label>
+                        <input type="number" id="cantidad" name="cantidad" value="1" min="1" max="10" step="1" aria-describedby="error-cantidad" aria-invalid="false" required>
+                        <p class="error" id="error-cantidad"></p>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Selección de base y mejoras</legend>
+                    <div class="campo">
+                        <label for="equipo-base">Equipo base *</label>
+                        <select id="equipo-base" name="equipo-base" aria-describedby="error-equipo" aria-invalid="false" required>
+                            <option value="">-- Selecciona un equipo --</option>
+                            <option value="rog-g16">ASUS ROG Strix G16 - $2,399</option>
+                            <option value="tuf-a18">ASUS TUF Gaming A18 - $1,250</option>
+                            <option value="legion-5">Lenovo Legion 5 - $1,599</option>
+                            <option value="legion-tower">Lenovo Legion Tower 5i (PC) - $1,450</option>
+                            <option value="aero-x16">Gigabyte AERO X16 - $2,199</option>
+                        </select>
+                        <p class="error" id="error-equipo"></p>
+                    </div>
+                    <fieldset class="interno">
+                        <legend>Memoria RAM</legend>
+                        <div class="opcion"><input type="radio" id="ram-16" name="ram" value="16" checked><label for="ram-16">Mantener 16 GB (de fábrica) - +$0</label></div>
+                        <div class="opcion"><input type="radio" id="ram-32" name="ram" value="32"><label for="ram-32">Actualizar a 32 GB (DDR5) - +$400</label></div>
+                        <div class="opcion"><input type="radio" id="ram-64" name="ram" value="64"><label for="ram-64">Actualizar a 64 GB (DDR5) - +$800</label></div>
+                    </fieldset>
+                    <fieldset class="interno">
+                        <legend>Almacenamiento extra</legend>
+                        <div class="opcion"><input type="checkbox" id="ssd-1tb" name="ssd-1tb" value="250"><label for="ssd-1tb">Añadir SSD 1 TB NVMe Gen 4 - +$250</label></div>
+                    </fieldset>
+                </fieldset>
+            </div>
+
+            <p class="resumen-parcial">Total estimado: <strong id="total-parcial" aria-live="polite">$0.00</strong></p>
+            <p class="error" id="resumen-errores" role="alert"></p>
+            <button type="submit">Generar cotización</button>
+        </form>
+    </main>
+    <footer>
+        <p>&copy; 2026 - Proyecto de Simulador de Hardware</p>
+    </footer>
+    <script src="js/datos.js"></script>
+    <script src="js/configurador.js"></script>
+</body>
+</html>

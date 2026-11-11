@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resumen de la cotización generada.">
+    <title>Resumen de Cotización | TechStore</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <a class="saltar" href="#contenido">Saltar al contenido</a>
+    <header>
+        <h1>TechStore: Simulador de Hardware</h1>
+        <p>Cotiza tu equipo ideal y simula mejoras de componentes.</p>
+        <nav aria-label="Principal">
+            <ul>
+                <li><a href="index.html">Catálogo de Equipos</a></li>
+                <li><a href="configurador.html">Configurador a Medida</a></li>
+                <li><a href="resumen.html" aria-current="page">Resumen de Cotización</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="contenido">
+        <h2>Resumen de Cotización</h2>
+        <div id="sin-cotizacion" class="mensaje" hidden>
+            <p>Todavía no has generado una cotización.</p>
+            <p><a href="configurador.html">Ir al configurador</a></p>
+        </div>
+        <div id="con-cotizacion">
+            <div class="tabla-contenedor">
+                <table>
+                    <caption>Detalle de la cotización</caption>
+                    <thead>
+                        <tr><th scope="col">Concepto</th><th scope="col">Detalle</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><th scope="row">Cliente</th><td id="r-cliente">-</td></tr>
+                        <tr><th scope="row">Correo</th><td id="r-correo">-</td></tr>
+                        <tr><th scope="row">Equipo base</th><td id="r-equipo">-</td></tr>
+                        <tr><th scope="row">Precio base</th><td id="r-base">$0.00</td></tr>
+                        <tr><th scope="row">Memoria RAM</th><td id="r-ram">-</td></tr>
+                        <tr><th scope="row">SSD 1 TB adicional</th><td id="r-ssd">-</td></tr>
+                        <tr><th scope="row">Mejoras y extras</th><td id="r-extras">$0.00</td></tr>
+                        <tr><th scope="row">Precio por equipo</th><td id="r-unitario">$0.00</td></tr>
+                        <tr><th scope="row">Cantidad</th><td id="r-cantidad">0</td></tr>
+                    </tbody>
+                    <tfoot>
+                        <tr><th scope="row">Total estimado</th><td id="r-total">$0.00</td></tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="acciones">
+                <a class="boton secundario" href="configurador.html">Modificar cotización</a>
+                <button type="button" id="btn-borrar">Nueva cotización</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 - Proyecto de Simulador de Hardware</p>
+    </footer>
+    <script src="js/datos.js"></script>
+    <script src="js/resumen.js"></script>
+</body>
+</html>
