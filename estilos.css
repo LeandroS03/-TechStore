@@ -180,6 +180,10 @@ input[type="radio"], input[type="checkbox"] {
 }
 .resumen-parcial strong { color: var(--accent-color); }
 .mensaje { padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); margin-bottom: 20px; }
+/* Enlaces contextuales visibles sobre el fondo oscuro del mensaje */
+.mensaje a { color: var(--accent-color); text-decoration: underline; }
+.mensaje a:hover { color: #8beaff; }
+
 
 /* 7. Tablas */
 .tabla-contenedor { overflow-x: auto; margin-bottom: 20px; }
