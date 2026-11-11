@@ -56,9 +56,3 @@ El proyecto se encuentra publicado mediante **GitHub Pages**, desde la rama `mai
 
 - **Sitio web:** https://leandros03.github.io/-TechStore/
 - **Código fuente:** https://github.com/LeandroS03/-TechStore
-
-## Contexto académico
-
-GitHub se empleó como **repositorio final y medio de publicación** del proyecto. No se presenta como evidencia de desarrollo colaborativo mediante ramas o integración de commits.
-
-> La cotización es una simulación académica y no constituye una oferta comercial.
