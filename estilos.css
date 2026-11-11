@@ -1,0 +1,215 @@
+/* 1. Variables (paleta con contraste verificado) */
+:root {
+    --bg-color: #121212;
+    --card-bg: #1e1e1e;
+    --field-bg: #2a2a2a;
+    --text-color: #e0e0e0;
+    --muted-color: #b0b0b0;
+    --accent-color: #00d2ff;
+    --accent-hover: #2d62ad;
+    --error-color: #ff8a80;
+    --ok-color: #7ee787;
+    --border-color: #4a4a4a;
+    --field-border: #8c8c8c;
+}
+
+/* 2. Reset básico */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+/* Enlace para saltar al contenido (accesibilidad con teclado) */
+.saltar {
+    position: absolute;
+    left: 10px;
+    top: -60px;
+    background: var(--accent-color);
+    color: #000;
+    padding: 10px 16px;
+    font-weight: bold;
+    z-index: 10;
+}
+.saltar:focus { top: 10px; }
+
+/* Foco visible para todos los elementos interactivos */
+a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible {
+    outline: 3px solid var(--accent-color);
+    outline-offset: 3px;
+}
+
+/* 3. Encabezado y navegación (Flexbox) */
+header {
+    background-color: #000;
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 3px solid var(--accent-color);
+}
+header h1 {
+    color: var(--accent-color);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.8rem;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 20px;
+}
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 10px;
+    border-bottom: 2px solid transparent;
+}
+nav a:hover, nav a[aria-current="page"] {
+    color: var(--accent-color);
+    border-bottom-color: var(--accent-color);
+}
+
+/* 4. Contenido principal */
+main { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    border-left: 4px solid var(--accent-color);
+    padding-left: 10px;
+}
+.intro { margin-bottom: 25px; }
+
+/* 5. Catálogo: CSS Grid solo en el contenedor de tarjetas */
+.rejilla {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+.tarjeta {
+    background-color: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.tarjeta:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0, 210, 255, 0.15);
+    border-color: var(--accent-color);
+}
+.tarjeta img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin: 0 auto 15px;
+    background-color: #fff;
+}
+.tarjeta ul { text-align: left; margin: 15px 0; padding-left: 20px; flex-grow: 1; }
+.tarjeta li { margin-bottom: 8px; }
+
+/* Botones y enlaces con aspecto de botón */
+.boton, button {
+    display: block;
+    width: 100%;
+    background-color: var(--accent-color);
+    color: #000;
+    border: none;
+    padding: 14px 22px;
+    font-size: 1.05rem;
+    font-weight: bold;
+    font-family: inherit;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.boton:hover, button:hover { background-color: var(--accent-hover); color: #fff; }
+.boton.secundario { background: transparent; color: var(--accent-color); border: 2px solid var(--accent-color); }
+.boton.secundario:hover { background-color: var(--accent-hover); color: #fff; }
+
+/* 6. Formulario */
+fieldset {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    background-color: var(--card-bg);
+    margin-bottom: 20px;
+}
+legend { padding: 0 15px; font-size: 1.2rem; font-weight: bold; color: var(--accent-color); }
+.campo { margin-bottom: 18px; }
+label { display: block; font-weight: 600; margin-bottom: 6px; }
+.opcion label { display: inline; font-weight: normal; }
+.opcion { margin-bottom: 6px; }
+input[type="text"], input[type="email"], input[type="number"], select {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--field-bg);
+    color: var(--text-color);
+    border: 1px solid var(--field-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+input[aria-invalid="true"], select[aria-invalid="true"] { border: 2px solid var(--error-color); }
+input[type="radio"], input[type="checkbox"] {
+    accent-color: var(--accent-color);
+    width: 1.2rem; height: 1.2rem;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+.ayuda { color: var(--muted-color); font-size: 0.9rem; }
+.error { color: var(--error-color); font-size: 0.95rem; min-height: 1.4em; font-weight: 600; }
+.resumen-parcial {
+    background: var(--card-bg);
+    border: 1px dashed var(--accent-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    font-size: 1.15rem;
+}
+.resumen-parcial strong { color: var(--accent-color); }
+.mensaje { padding: 15px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--card-bg); margin-bottom: 20px; }
+
+/* 7. Tablas */
+.tabla-contenedor { overflow-x: auto; margin-bottom: 20px; }
+table { width: 100%; border-collapse: collapse; background-color: var(--card-bg); }
+caption { text-align: left; padding: 10px 0; color: var(--muted-color); }
+th, td { padding: 14px; text-align: left; border-bottom: 1px solid var(--border-color); }
+thead th, tbody th { background-color: var(--field-bg); }
+tfoot th, tfoot td { font-size: 1.2rem; color: var(--accent-color); border-top: 2px solid var(--border-color); }
+.acciones { display: flex; gap: 15px; flex-wrap: wrap; }
+.acciones > * { flex: 1 1 220px; }
+
+/* 8. Pie */
+footer { text-align: center; padding: 25px; background-color: #000; color: #b0b0b0; border-top: 1px solid var(--border-color); }
+
+/* 9. Diseño adaptable (media queries) */
+@media (max-width: 600px) {
+    header h1 { font-size: 1.3rem; letter-spacing: 1px; }
+    nav ul { flex-direction: column; align-items: center; gap: 10px; }
+    h2 { font-size: 1.4rem; }
+    main { padding: 20px 14px; }
+    fieldset { padding: 15px; }
+    th, td { padding: 10px; font-size: 0.95rem; }
+}
+@media (min-width: 900px) {
+    .formulario-doble { display: grid; grid-template-columns: 1fr 1fr; gap: 25px; align-items: start; }
+}
+@media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; }
+    .tarjeta:hover { transform: none; }
+}
+
+fieldset.interno { background: transparent; margin-bottom: 15px; padding: 15px; }
+fieldset.interno legend { font-size: 1rem; }
