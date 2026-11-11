@@ -1,23 +1,64 @@
-# TechStore — Simulador de Hardware
+# TechStore | Simulador de Hardware
 
-Proyecto académico de sitio web estático para consultar equipos, personalizar memoria RAM y almacenamiento, y generar un resumen de cotización.
+**Proyecto académico de Desarrollo Basado en Plataformas.** Aplicación web para explorar equipos de cómputo, personalizar componentes y generar una cotización estimada desde el navegador.
 
-## Páginas
+🌐 **[Ver TechStore en línea](https://leandros03.github.io/-TechStore/)**
 
-- `index.html`: catálogo de equipos.
-- `configurador.html`: personalización y cálculo de precios.
-- `resumen.html`: resumen de cotización.
+## ¿Qué permite hacer?
+
+- **Explorar el catálogo:** consultar los modelos disponibles y sus precios base.
+- **Configurar un equipo:** elegir memoria RAM, almacenamiento y cantidad.
+- **Calcular el precio:** actualizar el costo de la configuración y sus extras.
+- **Validar datos:** comprobar los campos del formulario y mostrar mensajes de error.
+- **Consultar el resumen:** presentar los datos y el total de la cotización.
 
 ## Tecnologías
 
-HTML5, CSS3 y JavaScript, sin dependencias de servidor.
+| Tecnología | Uso |
+| --- | --- |
+| HTML5 | Estructura semántica de las páginas y formulario |
+| CSS3 | Diseño visual y adaptación a diferentes pantallas |
+| JavaScript | Eventos, validaciones, cálculo de precios y actualización del DOM |
+| localStorage | Conservación temporal de la cotización entre páginas |
+| GitHub Pages | Publicación del sitio estático |
 
-## Uso local
+## Estructura del repositorio
 
-Abrir `index.html` en un navegador y navegar entre las páginas. Para verificar el comportamiento con un servidor local, usar la extensión Live Server de VS Code.
+Los archivos se encuentran en la **raíz del repositorio**:
+
+```text
+-TechStore/
+├── index.html
+├── configurador.html
+├── resumen.html
+├── estilos.css
+├── datos.js
+├── configurador.js
+├── resumen.js
+├── R.webp
+├── L.webp
+├── G.webp
+└── README.md
+```
+
+## Cómo utilizarlo
+
+1. Abre **[TechStore](https://leandros03.github.io/-TechStore/)**.
+2. En el catálogo, selecciona un equipo.
+3. Personaliza las opciones disponibles y completa el formulario.
+4. Genera la cotización y revisa el resumen.
+
+También puedes descargar el repositorio y abrir `index.html` en tu navegador.
 
 ## Publicación
 
-El proyecto está diseñado para GitHub Pages. Cuando todos los archivos del sitio estén cargados en la raíz del repositorio, ir a **Settings → Pages → Build and deployment → Deploy from a branch**, elegir **main** y la carpeta **/(root)**, y guardar.
+El proyecto se encuentra publicado mediante **GitHub Pages**, desde la rama `main` y la carpeta `/(root)`.
 
-> El repositorio debe incluir las carpetas `css/`, `js/` e `img/` y las tres páginas HTML para que el sitio funcione correctamente.
+- **Sitio web:** https://leandros03.github.io/-TechStore/
+- **Código fuente:** https://github.com/LeandroS03/-TechStore
+
+## Contexto académico
+
+GitHub se empleó como **repositorio final y medio de publicación** del proyecto. No se presenta como evidencia de desarrollo colaborativo mediante ramas o integración de commits.
+
+> La cotización es una simulación académica y no constituye una oferta comercial.
