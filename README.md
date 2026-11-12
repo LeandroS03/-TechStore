@@ -57,11 +57,11 @@ El proyecto se encuentra publicado mediante **GitHub Pages**, desde la rama `mai
 - **Sitio web:** https://leandros03.github.io/-TechStore/
 - **Código fuente:** https://github.com/LeandroS03/-TechStore
 
-   ## Integrantes
-   - Genner Leandro Rivas Romero
-   - Juan Sebastián Ruiz Giler
+## Integrantes
+- Genner Leandro Rivas Romero
+- Juan Sebastián Ruiz Giler
 
-   ## Estándares aplicados
-   - HTML5 semántico y validado con Nu HTML Checker
-   - CSS validado con CSS Validation Service
-   - Accesibilidad revisada con WAVE y Lighthouse
+## Estándares aplicados
+- HTML5 semántico y validado con Nu HTML Checker
+- CSS validado con CSS Validation Service
+- Accesibilidad revisada con WAVE y Lighthouse
