@@ -11,7 +11,7 @@ const PRECIO_SSD = 250;
 const CLAVE = 'cotizacionTechStore';
 
 function dinero(valor) {
-    return '$' + valor.toFixed(2);
+           return '$' + valor.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
 
 // Calcula todos los montos de una cotización
